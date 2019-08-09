@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Books </title>
+</head>
+<style>
+
+    h1{
+        text-align: center;
+    }
+    body{
+        background-color:lightblue;
+    }
+    img{
+        width: 300px;
+    }
+</style>
+<body>
+    <h1 id="nothing"> BOOKS </h1>
+    <input type="text" id="atall" placeholder="Choose a color">
+    <Button id="change"> Change It </Button>
+    <button id = "addBtn"> Add </button>
+    <div id = "content"> </div>
+    <script>
+        document.getElementById( 'change') .addEventListener( 'click',function(){
+            document.getElementById( 'nothing') .style.color = document.getElementById( 'atall').value;
+        })
+        
+        document.getElementById( 'content').innerHTML = localStorage.getItem('mylist')
+        document.getElementById('addBtn').addEventListener('click', function(){
+                var a = document.createElement('li')
+                a. append(document.getElementById( 'atall').value)
+
+                var c = document.createElement( 'input')
+                c.setAttribute( 'type' , 'checkbox')
+                c.addEventListener('change' , checkItem)
+                a.append(c)
+
+                var b = document.createElement('button')
+                b.addEventListener( 'click', removeItem)
+                b.innerHTML = "Funny"
+                a.append(b)
+
+                document.getElementById( 'content').append (a)
+                localStorage.setItem('myList', document.getElementById( 'content').innerHTML)
+        })
+        function removeItem(){
+            this.parentNode.remove()
+        }
+        function checkItem(){
+                this.parentNode.style.color = "white"
+                this.parentNode.style.textDecoration = "line-through"
+            }
+    </script>
+   <p> <font color = "white"> Dork <br></p>
+    <img src = "download.jpeg">
+   <p> The Magic<br> </p>
+   <img src = "book.jpg">
+<p> YOU DO YOU </p>
+<img src = "images.jpg">
+
+   </font>
+</body>
+</html>

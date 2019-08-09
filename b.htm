@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)file:///Users/tumo/Desktop/Programming%20summer%20camp%20pm/Qamar%20.HTML -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title> Books </title>
+<style>
+    h1{
+        text-align: center;
+    }
+    body{
+        background-color:lightblue;
+    }
+    img{
+        width: 300px;
+    }
+</style></head>
+
+<body>
+    <h1 id="nothing" style="color: gray;"> BOOKS </h1>
+    <input type="text" id="atall" placeholder="Choose a color">
+    <button id="change"> Change It </button>
+    <button id="addBtn"> Add </button>
+    <div id="content"></div>
+    <script>
+        document.getElementById( 'change') .addEventListener( 'click',function(){
+            document.getElementById( 'nothing') .style.color = document.getElementById( 'atall').value;
+        })
+        
+        document.getElementById( 'content').innerHTML = localStorage.getItem('mylist')
+        document.getElementById('addBtn').addEventListener('click', function(){
+                var a = document.createElement('li')
+                a. innerHTML = document.getElementById( 'atall').value
+
+                var b = document.createElement('button')
+                b.addEventListener( 'click', removeItem)
+                b.innerHTML = "Funny"
+                a.append(b)
+
+                document.getElementById( 'content').append (a)
+                localStorage.setItem('myList', document.getElementById( 'content').innerHTML)
+        })
+        function removeItem(){
+            this.parentNode.remove()
+        }
+    </script>
+   <p> <font color="white"> Dork <br></font></p><font color="white">
+    <img src="file:///Users/tumo/Desktop/Programming%20summer%20camp%20pm/download.jpeg">
+   <p> The Magic<br> </p>
+   <img src="file:///Users/tumo/Desktop/Programming%20summer%20camp%20pm/book.jpg">
+<p> YOU DO YOU </p>
+<img src="file:///Users/tumo/Desktop/Programming%20summer%20camp%20pm/download.jpeg">
+
+   </font>
+
+</body></html>
